@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(90deg, #ff9800, #f57c00);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">My Car Rental</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cars</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Booking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLogin"
+                            aria-controls="offcanvasLogin">
+                            Login
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Offcanvas for Login -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasLogin" aria-labelledby="offcanvasLoginLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasLoginLabel">Login</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <form>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter your username">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <main>
+        <section class="container mt-5">
+            <h2>Available Cars</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="car1.jpg" class="card-img-top" alt="Car 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Chevrolet Camaro 2015</h5>
+                            <p class="card-text">Price: $100/day</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- More cars can be added here -->
+            </div>
+        </section>
+
+        <!-- Modal for Booking Form -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Vehicle Booking</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal Body -->
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="fullName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Complete Address</label>
+                                <textarea class="form-control" id="address" rows="3" placeholder="Enter your address" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="rentalDays" class="form-label">Number of Rental Days</label>
+                                <input type="number" class="form-control" id="rentalDays" min="1" placeholder="Enter number of days" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="carName" class="form-label">Car Name</label>
+                                <select class="form-select" id="carName" required>
+                                    <option value="">Select a car</option>
+                                    <option value="Chevrolet Camaro 2015">Chevrolet Camaro 2015</option>
+                                    <option value="Swift">Swift</option>
+                                    <!-- More cars can be added here -->
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer style="background: linear-gradient(90deg, #ff9800, #f57c00); padding: 20px 0; color: white;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <h4 style="margin-bottom: 10px;">Follow Us</h4>
+                <div style="display: flex; justify-content: center; gap: 15px;">
+                    <a href="#" style="color: white; text-decoration: none; font-size: 24px;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" style="color: white; text-decoration: none; font-size: 24px;">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" style="color: white; text-decoration: none; font-size: 24px;">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" style="color: white; text-decoration: none; font-size: 24px;">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 20px;">
+                <h4 style="margin-bottom: 10px;">Admin</h4>
+                <div style="display: flex; justify-content: center; gap: 15px;">
+                    <a href="All_users.html" style="color: white; text-decoration: none; padding: 10px 15px; background-color: rgba(255, 255, 255, 0.2); border-radius: 5px;">View Signup</a>
+                    <a href="All_complaints.html" style="color: white; text-decoration: none; padding: 10px 15px; background-color: rgba(255, 255, 255, 0.2); border-radius: 5px;">View Complaints</a>
+                    <a href="view_rental_requests.html" style="color: white; text-decoration: none; padding: 10px 15px; background-color: rgba(255, 255, 255, 0.2); border-radius: 5px;">View Bookings</a>
+                    <a href="view_cars.html" style="color: white; text-decoration: none; padding: 10px 15px; background-color: rgba(255, 255, 255, 0.2); border-radius: 5px;">View Cars</a>
+                    <a href="add_vehicle.html" style="color: white; text-decoration: none; padding: 10px 15px; background-color: rgba(255, 255, 255, 0.2); border-radius: 5px;">Add Cars</a>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <p style="margin: 0;">&copy; 2024 My Car Rental. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Function to show the welcome alert
+        function showWelcomeAlert() {
+            alert("Welcome to the Vehicle Booking System!");
+        }
+
+        // Call the function when the page loads
+        window.onload = function () {
+            showWelcomeAlert();
+        };
+
+        // Function to handle login state and button updates
+        function handleLogin(username) {
+            const loginButton = document.querySelector('.btn-primary[data-bs-toggle="offcanvas"]');
+            // Check if the user is logged in
+            if (username) {
+                // User is logged in, update the login button to show the username
+                loginButton.innerText = username;
+                loginButton.onclick = null; // Disable further clicks
+            }
+        }
+
+        // Example usage (no PHP, assuming you know the username from JavaScript or session storage)
+        function onLoginSuccess() {
+            const username = localStorage.getItem('username'); // For example, getting username from localStorage
+            handleLogin(username); // Call the function with the username
+        }
+
+        // Call the onLoginSuccess function to check the login state
+        onLoginSuccess();
+    </script>
+</body>
+
+</html>
